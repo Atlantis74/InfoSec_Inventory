@@ -24,6 +24,7 @@ Based on
 "targets_all.txt"
 
 Be clean in your file. I don't handle errors.
+
 Supported today:
 - www.test.com - subdomains (not urls)
 - 1.1.1.1 - ipv4
@@ -32,7 +33,7 @@ Supported today:
 
 Unsupported:
 - ipv6
-- urls (would be great)
+- urls  (would be great)
 
 # 2. With NMAP, scan your IP ranges and make basic reseaches
 Based on your "target_all.txt" file :
