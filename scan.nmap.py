@@ -1,3 +1,5 @@
+# Coming soon
+
 url=""
 domain = ""
 capture_location="capture/"
