@@ -6,12 +6,14 @@ Based on
 2. Nmap
 3. Selenium
 
-# Setup (I'm on Mac M1)
+# Setup 
 
-Install chromium or adapt the config to your config ( chrome, chromium, brave, firefox, ... ) 
-Install NMap
-Install Python3 and its libs
-Download the chromedrive related to your browser
+(I'm on Mac M1)
+
+- Install chromium ( https://www.chromium.org/getting-involved/download-chromium )or adapt the config to your config ( chrome, chromium, brave, firefox, ... ) 
+- Install NMap ( https://nmap.org/download.html )
+- Install Python3 ( https://www.python.org/downloads/ ) and its libs ( Selenium, nmap, ... )
+- Download the chromedrive related to your browser (https://chromedriver.chromium.org/downloads )
 
 / sudo python3 -m pip install selenium
 
