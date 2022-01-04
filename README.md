@@ -21,6 +21,17 @@ Download the chromedrive related to your browser
 
 "targets_all.txt"
 
+Be clean in your file. I don't handle errors.
+Supported today:
+- www.test.com - subdomains (not urls)
+- 1.1.1.1 - ipv4
+- 10.0.10.0/24 - subnets
+- example.com - domain
+
+Unsupported:
+- ipv6
+- urls (would be great)
+
 # 2. With NMAP, scan your IP ranges and make basic reseaches
 Based on your "target_all.txt" file :
 - identify subdomains
