@@ -17,15 +17,22 @@ Download the chromedrive related to your browser
 
 / brew install chromedriver
 
+# 1. Start with domain name, list of IP and url in a file
 
-# With NMAP Scan your ranges and make basic reseaches.
+"targets_all.txt"
+
+# 2. With NMAP, scan your IP ranges and make basic reseaches
+Based on your "target_all.txt" file :
 - identify subdomains
 - extract domains and do research on Shodan, Spyse, Hardenize, UrlScan, ...
 - identify IP (alive and not responding)
 - identify web services
 
 
-# Filter your findings by categories and take Screenshots
+# 3. Filter your findings by categories and take Screenshots
+
+By generating specific "target_XXX.txt" files you can run queries.
+
 - http - screenshot
 - https - screenshot + Qualys SSL check
 - bad protocols - rdp, telnet, ftp
@@ -33,4 +40,4 @@ Download the chromedrive related to your browser
 - web email related - imap, pop3, smtp, ... track with MxToolbox
 - ...
 
-# Idealy create a basic report in MsWord with all that sh!t.
+# 4. Idealy create a basic report in MsWord with all that sh!t.
