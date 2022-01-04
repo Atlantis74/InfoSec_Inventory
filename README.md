@@ -11,8 +11,10 @@ Based on
 Install chromium or adapt the config to your config ( chrome, chromium, brave, firefox, ... ) 
 Install NMap
 Install Python3 and its libs
-command : sudo python3 -m pip install selenium
-command : brew install chromedriver
+Download the chromedrive related to your browser
+
+/ sudo python3 -m pip install selenium
+/ brew install chromedriver
 
 
 # With NMAP Scan your ranges and make basic reseaches.
