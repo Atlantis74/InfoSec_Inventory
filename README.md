@@ -14,6 +14,7 @@ Install Python3 and its libs
 Download the chromedrive related to your browser
 
 / sudo python3 -m pip install selenium
+
 / brew install chromedriver
 
 
