@@ -1,0 +1,4 @@
+www.test.com
+1.1.1.1
+10.0.10.0/24
+example.com
