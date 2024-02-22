@@ -5,15 +5,34 @@ from time import sleep
 
 #  sudo python3 -m pip install selenium
 #  brew install chromedriver
+#  or go to https://chromedriver.chromium.org/downloads
+#  install chromium https://www.google.com/intl/en/chrome/canary/ 
 
+capture_location="./capture/" # Don't forget the / ate the end to force the Folder.
 
-capture_location="capture/" # Don't forget the / to force the Folder.
-
-targets_file_all="targets_all.txt"
+targets_file_all="targets_ip.txt"
 targets_file_http="targets_http.txt"
 targets_file_https="targets_https.txt"
 targets_file_domains="targets_domains.txt"
+search_subdomaines="No"
+take_screenshoots="No" # This is lighter, but remove interesting findings
 
+
+
+# By domain, collect the DNS information (Hosts, MX, CNAME, Dname, TXT, SPF, DMARK ... )
+# By domain check the domain to the different engines.
+# By domain, list subdomains (Yes/NO)
+# By host discovered, check the IP (to merge) similar site IP together
+# By host discovered, check if the host is behind Cloudflare or Akamai
+# By host, check if the host is behind a reverse proxy 
+# Create a list of "targets" with domain, IP, url, status(alive,proxied,notresponding,blacklist)
+# By host, check if the host is a 'Microsoft Office 365 service" is yes, exclude the host of the 'alive' list
+# By host in "targets" we ping and define the open ports ( Shodan, NMap, ...) to be sure the host is 'alive'
+# If host common port is/are open or ping we can consider the host 'alive'
+# Updat the list "targets" with openports
+# By alive host take screenshot of websites (80 and 443, but also RDP etc)
+# By alive host for HTTPS check the certificate status
+# By alive host determine the technologie in place ( and do a security scan in relation - wordress, joomla, drupa, RDP, ... )
 
 def site_screenshot(target_url,time_wait,capture_file_name):
     
@@ -21,7 +40,7 @@ def site_screenshot(target_url,time_wait,capture_file_name):
     options = webdriver.ChromeOptions()
     options.binary_location = "/Applications/Chromium.app/Contents/MacOS/Chromium"
     options.headless = False   # Put to True to hide the Window
-    chrome_driver_binary = "./chromedriver"
+    chrome_driver_binary = "./chromedriver.exe"
     driver = webdriver.Chrome(chrome_driver_binary, options=options)
     try:
         driver.get(target_url)
@@ -108,6 +127,35 @@ with open(targets_file_https, 'r') as f: # r for READ
 
 
 # Parse the DOMAIN file line by line to query some important web tools.
+    
+#     shodan.io             v
+#     mxtoolbox.com         v
+#     wigle.net
+#     grep.app
+#     app.binaryedge.io
+#     onyphe.io
+#     viz.greynoise.io
+#     censys.io             v
+#     hunter.io
+#     fofa.info
+#     zoomeye.org
+#     leakix.net
+#     intelx.io
+#     app.netlas.io
+#     searchcode.com
+#     urlscan.io            v
+#     publicwww.com
+#     fullhunt.io
+#     socradar.io
+#     binaryedge.io
+#     tivre.rocks
+#     crt.sh
+#     vulners.com
+#     pulsedive.com
+#     spice.com             RIP
+#     hardenize.com         v
+    
+
 with open(targets_file_domains, 'r') as f: # r for READ
     lines = f.readlines()
     #print(lines)
@@ -145,9 +193,9 @@ with open(targets_file_domains, 'r') as f: # r for READ
         time_wait=35
         site_screenshot(target_url,35,domain+"_Hardenize")
         
-        print("... End of loop Hardenize, Spyse, Shodand, MxToolbox .... for : "+domain)       
+        print("... End of loop for Tools .... for : "+domain)       
     print("Well done for domains")
-    print("End of the Hardenize, Spyce, Shodan, MxToolbox list, ... ")
+    print("End of the Tools sections ")
 
 
 
